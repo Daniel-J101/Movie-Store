@@ -15,6 +15,16 @@ public class Movie {
 
     }
 
+    public Movie(Movie source) {
+        this.name = source.name;
+        this.format = source.format;
+        this.rating = source.rating;
+        this.isAvailable = source.isAvailable;
+        this.sellingPrice = source.sellingPrice;
+        this.rentalPrice = source.rentalPrice;
+
+    }
+
     public String getName() {
         return name;
     }
@@ -61,5 +71,12 @@ public class Movie {
 
     public void setAvailable(boolean available) {
         isAvailable = available;
+    }
+
+    public String toString() {
+        return "\tName: " + name + "\n" + "\tFormat: " + format
+                + "\n" + "\tRating: " + rating + "\n" + "\tSelling Price: "
+                + sellingPrice + "\n" + "\tRental Price: " + rentalPrice + "\n"
+                + "\tAvailability: " + (isAvailable ? "in-stock " : " rented") + "\n";
     }
 }
